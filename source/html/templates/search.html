@@ -11,7 +11,7 @@
 					ng-model="selectedVehicle"
 					ng-change="changeSelectVehicle(vehicle)"
 					ng-init="selectedVehicle = vehicles[0]"
-					ng-options="i as i.name for i in vehicles"
+					ng-options="i as i.name for i in vehicles track by i.name"
 					value="vehicle.name">
 				</select>
 				<span class="custom-select-value">Fahrzeug</span>
