@@ -21,34 +21,16 @@ myApp.controller('searchCtrl', function($scope, $http) {
 		{ name:'Michelin', value:'Michelin' }
 	];
 
-	/*
-	$scope.changeSelectVehicle = function(vehicle) {
-		console.log("vehicle changed");
-	};
-
-	$scope.changeSelectSeasons = function(season) {
-		console.log("season changed");
-	};
-	*/
 
 	$scope.processForm = function() {
 
-		/*
 		$http({
-			method  : 'POST',
-			url     : 'process.php',
-			data    : $.param($scope.formData),
-			headers : { 'Content-Type': 'application/x-www-form-urlencoded' }
-		}).success(function(data) {
-			console.log(data);
-			if (!data.success) {
-				$scope.errorName = data.errors.name;
-				$scope.errorSuperhero = data.errors.superheroAlias;
-			} else {
-				$scope.message = data.message;
-			}
-		});
-		*/
+			method : 'POST',
+			url : 'process.php',
+			headers : {'Content-Type': 'application/x-www-form-urlencoded'}
+		}).success(function(data, status) {
+			$scope.results = data;
+        });
 
 	};
 
