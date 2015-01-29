@@ -1,3 +1,7 @@
-#angular-boilerplate
+#reifen-suche-ng
 
-A simple boilerplate using angular, grunt and sass.
+AngularJS version.
+
+Demo: http://reifen-suche-ng.rafaelbirkmann.de/
+
+![Preview](https://raw.githubusercontent.com/birkmann/reifen-suche-ng/master/preview.png)
