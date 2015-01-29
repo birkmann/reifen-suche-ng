@@ -3,7 +3,8 @@
 <div class="page-wrapper">
 
 	<div class="search-form-wrapper">
-		<form action="" method="get">
+		<!--form action="" method="get"-->
+		<form ng-submit="processForm()">
 	
 			<div class="custom-select-wrapper custom-select-large">
 				<select
@@ -11,25 +12,31 @@
 					ng-model="selectedVehicle"
 					ng-change="changeSelectVehicle(vehicle)"
 					ng-init="selectedVehicle = vehicles[0]"
-					ng-options="i as i.name for i in vehicles track by i.name"
-					value="vehicle.name">
+					ng-options="i as i.name for i in vehicles track by i.value">
 				</select>
-				<span class="custom-select-value">Fahrzeug</span>
+				<span class="custom-select-value" ng-bind="selectedVehicle.name"></span>
 			</div>
 	
 			<div class="custom-select-wrapper custom-select-large">
-				<select ng-model="selectedSeason" ng-change="changeSelectSeasons(season)" ng-options="season.name as season.name for season in seasons">
-					<option value="">Alle</option>
+				<select
+					name="season"
+					ng-model="selectedSeason"
+					ng-change="changeSelectSeason(season)"
+					ng-init="selectedSeason = seasons[0]"
+					ng-options="i as i.name for i in seasons track by i.value">
 				</select>
-				<span class="custom-select-value">Saison</span>
+				<span class="custom-select-value" ng-bind="selectedSeason.name"></span>
 			</div>
 	
 			<div class="custom-select-wrapper custom-select-large">
-				<select name="" id="" class="custom-select">
-					<option value="">Bridgestone</option>
-					<option value="">Michelin</option>
+				<select
+					name="manufacturer"
+					ng-model="selectedManufacturer"
+					ng-change="changeSelectManufacturer(manufacturer)"
+					ng-init="selectedManufacturer = manufacturers[0]"
+					ng-options="i as i.name for i in manufacturers track by i.value">
 				</select>
-				<span class="custom-select-value">Hersteller</span>
+				<span class="custom-select-value" ng-bind="selectedManufacturer.name"></span>
 			</div>
 	
 			<div class="custom-select-wrapper custom-select-large">

@@ -1,29 +1,55 @@
 'use strict';
 
-myApp.controller('searchCtrl', function($scope) {
+myApp.controller('searchCtrl', function($scope, $http) {
 
-	$scope.options = [
-		{name:"name1", value:"value1"},
-    	{name:"name2", value:"value2"},
-    	{name:"name3", value:"value3",}
-    ];
 
 	$scope.vehicles = [
-		{ name:'PKW', value:'val1' },
-		{ name:'LKW', value:'val2' }
+		{ name:'Fahrzeugtyp', value:'' },
+		{ name:'PKW', value:'pkw' },
+		{ name:'LKW', value:'lkw' }
 	];
 
 	$scope.seasons = [
-		{name:'Sommer'},
-		{name:'Winter'}
+		{ name:'Jahreszeit', value:'' },
+		{ name:'Sommer', value:'sommer' },
+		{ name:'Winter', value:'winter' }
 	];
 
+	$scope.manufacturers = [
+		{ name:'Hersteller', value:'' },
+		{ name:'Bridgestone', value:'Bridgestone' },
+		{ name:'Michelin', value:'Michelin' }
+	];
+
+	/*
 	$scope.changeSelectVehicle = function(vehicle) {
 		console.log("vehicle changed");
 	};
 
 	$scope.changeSelectSeasons = function(season) {
 		console.log("season changed");
+	};
+	*/
+
+	$scope.processForm = function() {
+
+		/*
+		$http({
+			method  : 'POST',
+			url     : 'process.php',
+			data    : $.param($scope.formData),
+			headers : { 'Content-Type': 'application/x-www-form-urlencoded' }
+		}).success(function(data) {
+			console.log(data);
+			if (!data.success) {
+				$scope.errorName = data.errors.name;
+				$scope.errorSuperhero = data.errors.superheroAlias;
+			} else {
+				$scope.message = data.message;
+			}
+		});
+		*/
+
 	};
 
 });

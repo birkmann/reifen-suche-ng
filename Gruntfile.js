@@ -4,6 +4,15 @@ module.exports = function(grunt) {
 
 		pkg: grunt.file.readJSON('package.json'),
 
+		php: {
+		    dev: {
+		        options: {
+		            port: 8080,
+		            base: 'build'
+		        }
+		    }
+		},
+
 		assemble: {
 			options: {
 				layout: 'page.hbs',
@@ -48,11 +57,17 @@ module.exports = function(grunt) {
 						cwd: 'source/html/',
 						dest: 'build/',
 						expand: true,
-						src: ['**/*']
+						src: ['**/*.html']
 					},
 					{
-						cwd: 'source/data/',
-						dest: 'build/data/',
+						cwd: 'source/php',
+						dest: 'build/',
+						expand: true,
+						src: ['*.php']
+					},
+					{
+						cwd: 'source/csv/',
+						dest: 'build/csv/',
 						expand: true,
 						src: ['**/*']
 					}
@@ -68,13 +83,19 @@ module.exports = function(grunt) {
 					},
 					{
 						cwd: 'source/html/',
-						dest: 'build/',
+						dest: 'dist/',
 						expand: true,
-						src: ['**/*']
+						src: ['**/*.html']
 					},
 					{
-						cwd: 'source/data/',
-						dest: 'build/data/',
+						cwd: 'source/php',
+						dest: 'dist/',
+						expand: true,
+						src: ['*.php']
+					},
+					{
+						cwd: 'source/csv/',
+						dest: 'dist/csv/',
 						expand: true,
 						src: ['**/*']
 					}
@@ -168,10 +189,6 @@ module.exports = function(grunt) {
 			options: {
 				livereload: true
 			},
-			html: {
-				files: ['source/html/**/*.html'],
-				tasks: ['copy:dev', 'sync']
-			},
 			scss: {
 				files: ['source/sass/**/*.scss'],
 				tasks: ['compass']
@@ -184,9 +201,17 @@ module.exports = function(grunt) {
 				files: ['source/img/**/*'],
 				tasks: ['copy:dev', 'sync']
 			},
-			templates: {
+			assemble: {
 				files: ['source/assemble/**/*.{json,hbs}'],
 				tasks: ['assemble:dev']
+			},
+			html: {
+				files: ['source/html/**/*.html'],
+				tasks: ['copy:dev', 'sync']
+			},
+			php: {
+				files: ['source/php/**/*.php'],
+				tasks: ['copy:dev', 'sync']
 			}
 		},
 
@@ -214,11 +239,13 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-copy');
+	grunt.loadNpmTasks('grunt-php');
 
 	grunt.registerTask('default', ['build']);
 
 	grunt.registerTask('build', [
 		//'newer:assemble:dev',
+		'php:dev',
 		'compass:dev',
 		'includes:dev',
 		'copy:dev',
