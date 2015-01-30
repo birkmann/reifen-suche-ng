@@ -9,69 +9,81 @@
 			<div class="custom-select-wrapper custom-select-large">
 				<select
 					name="vehicle"
-					ng-model="selectedVehicle"
-					ng-change="changeSelectVehicle(vehicle)"
-					ng-init="selectedVehicle = vehicles[0]"
+					ng-model="vehicle"
+					ng-change="searchChanged()"
+					ng-init="vehicle = vehicles[1]"
 					ng-options="i as i.name for i in vehicles track by i.value">
 				</select>
-				<span class="custom-select-value" ng-bind="selectedVehicle.name"></span>
+				<span class="custom-select-value" ng-bind="vehicle.name"></span>
 			</div>
 	
 			<div class="custom-select-wrapper custom-select-large">
 				<select
 					name="season"
-					ng-model="selectedSeason"
-					ng-change="changeSelectSeason(season)"
-					ng-init="selectedSeason = seasons[0]"
+					ng-model="season"
+					ng-change="searchChanged()"
+					ng-init="season = seasons[0]"
 					ng-options="i as i.name for i in seasons track by i.value">
 				</select>
-				<span class="custom-select-value" ng-bind="selectedSeason.name"></span>
+				<span class="custom-select-value" ng-bind="season.name"></span>
 			</div>
 	
 			<div class="custom-select-wrapper custom-select-large">
 				<select
 					name="manufacturer"
-					ng-model="selectedManufacturer"
-					ng-change="changeSelectManufacturer(manufacturer)"
-					ng-init="selectedManufacturer = manufacturers[0]"
+					ng-model="manufacturer"
+					ng-change="searchChanged()"
+					ng-init="manufacturer = manufacturers[0]"
 					ng-options="i as i.name for i in manufacturers track by i.value">
 				</select>
-				<span class="custom-select-value" ng-bind="selectedManufacturer.name"></span>
+				<span class="custom-select-value" ng-bind="manufacturer.name"></span>
 			</div>
 	
 			<div class="custom-select-wrapper custom-select-large">
-				<select name="" id="" class="custom-select">
-					<option value="A2">A2 (bis 10km/h)</option>
-					<option value="A3">A3 (bis 15km/h)</option>
+				<select
+					name="speed"
+					ng-model="speed"
+					ng-change="searchChanged()"
+					ng-init="speed = speeds[0]"
+					ng-options="i as i.name for i in speeds track by i.value">
 				</select>
-				<span class="custom-select-value">Geschwindigkeit</span>
+				<span class="custom-select-value" ng-bind="speed.name"></span>
 			</div>
 	
 			<div class="select-wrapper-width custom-select-wrapper custom-select-large">
-				<select name="" id="" class="custom-select">
-					<option value="195">195</option>
-					<option value="200">200</option>
+				<select
+					name="width"
+					ng-model="width"
+					ng-change="searchChanged()"
+					ng-init="width = widths[4]"
+					ng-options="i as i.name for i in widths track by i.value">
 				</select>
-				<span class="custom-select-value">Breite</span>
+				<span class="custom-select-value" ng-bind="width.name"></span>
 			</div>
-	
+			
 			<div class="select-wrapper-height custom-select-wrapper custom-select-large">
-				<select name="" id="" class="custom-select">
-					<option value="65">65</option>
-					<option value="70">70</option>
+				<select
+					name="height"
+					ng-model="height"
+					ng-change="searchChanged()"
+					ng-init="height = heights[2]"
+					ng-options="i as i.name for i in heights track by i.value">
 				</select>
-				<span class="custom-select-value">Höhe</span>
+				<span class="custom-select-value" ng-bind="height.name"></span>
 			</div>
-	
+			
 			<div class="select-wrapper-rim custom-select-wrapper custom-select-large">
-				<select name="" id="" class="custom-select">
-					<option value="15">15</option>
-					<option value="16">16</option>
+				<select
+					name="rim"
+					ng-model="rim"
+					ng-change="searchChanged()"
+					ng-init="rim = rims[1]"
+					ng-options="i as i.name for i in rims track by i.value">
 				</select>
-				<span class="custom-select-value">Zoll</span>
+				<span class="custom-select-value" ng-bind="rim.name"></span>
 			</div>
 	
-			<button type="submit" class="btn btn-large btn-primary">Treffer anzeigen</button>
+			<button type="submit" class="btn btn-large btn-primary">{{hits}} Treffer anzeigen</button>
 	
 		</form>
 	</div>
