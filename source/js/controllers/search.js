@@ -16,7 +16,7 @@ myApp.controller('searchCtrl', function($scope, $http) {
 		//{ name:'Alle', value:'all' },
 		{ name:'Sommer', value:'s' },
 		{ name:'Winter', value:'w' },
-		{ name:'Ganzjahres', value:'g' }
+		//{ name:'Ganzjahres', value:'g' }
 	];
 
 	$scope.manufacturers = [
@@ -99,6 +99,7 @@ myApp.controller('searchCtrl', function($scope, $http) {
 			headers : {'Content-Type': 'application/x-www-form-urlencoded'}
 		}).success(function(data, status) {
 			$scope.results = data;
+			window.scrollTo(0, 500);
 		});
 
 	};

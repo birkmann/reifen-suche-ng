@@ -1,10 +1,12 @@
 "use strict";
 
 var myApp = angular.module('myApp', [
-    'ngRoute'
+    'ngRoute',
+    'infinite-scroll'
 ]);
 
-myApp.config(function ($routeProvider) {
+myApp.config(function ($routeProvider, $locationProvider) {
+
     $routeProvider
     .when('/cart', {
         templateUrl:'templates/cart.html',
@@ -17,4 +19,7 @@ myApp.config(function ($routeProvider) {
     .otherwise({
         redirectTo: '/'
     });
+
+    $locationProvider.html5Mode(true);
+
 });
