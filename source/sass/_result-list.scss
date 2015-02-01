@@ -115,10 +115,10 @@
 				text-align: right;
 			}
 			.cost-wrapper {
+				color: #ff6600;
 				display: block;
 				margin: 0 0 0 15px;
 				line-height: 1.2em;
-				font-weight: bold;
 				font-size: 1.2em;
 				@include breakpoint(tablet){
 					font-size: 1.8em;
@@ -129,6 +129,12 @@
 			}
 			.button-wrapper {
 				margin: 10px 0;
+			}
+			.info {
+				margin: 20px 0 0;
+				line-height: 1.4em;
+				display: block;
+				font-size: 0.8em;
 			}
 		}
 
