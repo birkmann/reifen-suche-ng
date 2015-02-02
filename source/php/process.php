@@ -52,7 +52,7 @@
         $row_array['number']            = htmlentities($row['COL 1']); 
         $row_array['cost']              = htmlentities($row['COL 4']); 
         $row_array['manufacturer']      = htmlentities($row['COL 6']); 
-        $row_array['name']              = htmlentities($row['COL 7']);        
+        $row_array['name']              = htmlentities($row['COL 7']);
         $row_array['width']             = htmlentities($row['COL 9']);
         $row_array['height']            = htmlentities($row['COL 10']);
         $row_array['rim']               = htmlentities($row['COL 11']);

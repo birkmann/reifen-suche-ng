@@ -14,7 +14,7 @@ myApp.config(function ($routeProvider, $locationProvider) {
     })
     .when('/', {
         templateUrl:'templates/search.html',
-        controller: 'searchCtrl'
+        controller: 'mainCtrl'
     })
     .otherwise({
         redirectTo: '/'
