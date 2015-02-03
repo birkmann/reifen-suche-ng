@@ -4,7 +4,6 @@ myApp.controller('cartCtrl', function($scope, $filter) {
 
 	$scope.invoice = {
         items: [
-        	/*
 			{
 				qty: 10,
 				description: 'item',
@@ -15,7 +14,6 @@ myApp.controller('cartCtrl', function($scope, $filter) {
 				description: 'item2',
 				cost: 5.95
 			}
-			*/
         ]
     };
 
