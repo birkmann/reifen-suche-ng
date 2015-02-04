@@ -77,6 +77,11 @@ a {
 	background: url("../img/wall/small.jpg") no-repeat center top; 
 	background-size: 100%;
 	overflow: hidden;
+	@include breakpoint(phablet) {
+		height: 250px;
+		background: url("../img/wall/medium.jpg") no-repeat center top;
+		background-size: 100%;
+	}
 	@include breakpoint(tablet) {
 		height: 400px;
 		background: url("../img/wall/medium.jpg") no-repeat center top;
