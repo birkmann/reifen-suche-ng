@@ -66,10 +66,14 @@
 			}
 			.logo {
 				display: block;
-				margin: 0 auto;
-				width: auto !important; /*override the width below*/
+				margin: 0 auto 15px;
+				width: auto !important;
 				width: 100%;
 				max-width: 100%;
+				@include breakpoint(tablet){
+					max-width: 200px;
+					margin: 0 auto;
+				}
 			}
 		}
 
