@@ -149,6 +149,7 @@ a {
 	border: 1px solid #d8d8d8;
 	white-space: nowrap;
 	transition: border linear .2s,box-shadow linear .2s;
+	background: #F6F6F6;
 	background-image: linear-gradient(top,#FFF 0,#F6F6F6 100%);
 	color: #2d2d2d;
 }
@@ -160,6 +161,7 @@ a {
 }
 
 .btn-primary {
+	background: #FF8B3D;
 	background-image: linear-gradient(top,#FF8B3D 0,#F60 100%);
 	border: 1px solid #f60;
 	color: #FFF;
